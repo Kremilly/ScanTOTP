@@ -23,7 +23,8 @@ class QRCodeDetect:
         gray_img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
         
         decoded_qr = qr_decode(gray_img)
-        return decoded_qr[0].data.decode('utf-8')
+        if len(decoded_qr) > 0:
+            return decoded_qr[0].data.decode('utf-8')
     
     @classmethod
     def detect_from_file(cls, image_path):
@@ -35,12 +36,17 @@ class QRCodeDetect:
         gray_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
         decoded_qr = qr_decode(gray_img)
-        return decoded_qr[0].data.decode('utf-8')
+        
+        if len(decoded_qr) > 0:
+            return decoded_qr[0].data.decode('utf-8')
 
     @classmethod
-    def detect_from_webcam(cls):
+    def detect_from_webcam(cls, webcam=None):
         qrcode_data = ''
         webcam_selected = Settings.get('general.webcam', 'int')
+        
+        if webcam:
+            webcam_selected = webcam
         
         cap = cv2.VideoCapture(webcam_selected)
         detector = cv2.QRCodeDetector()
@@ -80,11 +86,11 @@ class QRCodeDetect:
         
         match mode:
             case 'file':
-                result = cls.detect_from_file(flags.image)
+                result = cls.detect_from_file(flags.input)
             case 'url':
-                result = cls.detect_from_url(flags.image)
+                result = cls.detect_from_url(flags.input)
             case 'webcam':
-                result = cls.detect_from_webcam()
+                result = cls.detect_from_webcam(flags.webcam)
             case _:
                 result = 'Error mode invalid'
                 
