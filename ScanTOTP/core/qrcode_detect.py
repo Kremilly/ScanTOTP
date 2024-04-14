@@ -15,6 +15,7 @@ class QRCodeDetect:
     @classmethod
     def detect_from_url(cls, image_url):
         response = requests.get(image_url)
+        
         if response.status_code != 200:
             raise Exception('Error on download to image')
         
