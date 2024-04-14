@@ -41,7 +41,7 @@ python scantotp -a qrcode -m url -i https://example.com/qrcode.png
 Read a QR Code image using webcam
 
 ```shell
-python scantotp -a qrcode -m webcam -i qrcode.png
+python scantotp -a qrcode -m webcam
 ```
 
 ### Decode a OTP code
@@ -61,7 +61,7 @@ python scantotp -a otp -m url -i https://example.com/qrcode.png
 Decode a OTP code using QR Code on webcam
 
 ```shell
-python scantotp -a otp -m webcam -i qrcode.png
+python scantotp -a otp -m webcam
 ```
 
 ### Flags
