@@ -12,10 +12,10 @@ class Startup:
         cls.flags = cls.parser(desc, flags)
     
     @classmethod
-    def parser(cls, desc, arguments):
+    def parser(cls, desc, args):
         parser = argparse.ArgumentParser(description=desc)
 
-        for arg in arguments:
+        for arg in args:
             parser.add_argument(
                 f"-{arg.pop('short', None)}", f"--{arg.pop('long', None)}", **arg
             )
@@ -24,10 +24,14 @@ class Startup:
     
     @classmethod
     def run(cls):
+        print('-' * 42)
+        print(f'--> {cls.flags.input} <--')
+        print('-' * 42)
+        
         match cls.flags.action:
             case 'qrcode':
                 QRCodeDetect.detect(cls.flags, True)
-            case 'totp':
+            case 'otp':
                 DecodeSecretKey.decode(cls.flags)
             case _:
                 print('Type is invalid')

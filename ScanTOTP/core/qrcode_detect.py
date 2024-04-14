@@ -25,7 +25,7 @@ class QRCodeDetect:
         
         decoded_qr = qr_decode(gray_img)
         if len(decoded_qr) > 0:
-            return decoded_qr[0].data.decode('utf-8')
+            return 'Data: ' + decoded_qr[0].data.decode('utf-8')
     
     @classmethod
     def detect_from_file(cls, image_path):
@@ -39,7 +39,7 @@ class QRCodeDetect:
         decoded_qr = qr_decode(gray_img)
         
         if len(decoded_qr) > 0:
-            return decoded_qr[0].data.decode('utf-8')
+            return 'Data: ' + decoded_qr[0].data.decode('utf-8')
 
     @classmethod
     def detect_from_webcam(cls, webcam=None):
@@ -79,7 +79,7 @@ class QRCodeDetect:
                 break
             
             if len(qrcode_data) > 0:
-                return qrcode_data
+                return 'Data: ' + qrcode_data
     
     @classmethod
     def detect(cls, flags, show=False):

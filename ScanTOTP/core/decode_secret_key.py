@@ -28,10 +28,6 @@ class DecodeSecretKey:
             if Settings.get('advanced.hide_otp_code', 'boolean') or flags.hide_key:
                 otp = str('*' * len(otp))
             
-            print('-' * 36)
-            print(f'[+] -> {flags.input}')
-            print('-' * 36)
-            
             print('Issuer:', issuer)
             print('Current OTP Code:', otp)
 
