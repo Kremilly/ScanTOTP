@@ -64,7 +64,7 @@ Decode a OTP code using QR Code on webcam
 python scantotp -a otp -m webcam
 ```
 
-### Flags
+## Flags
 
 | Name                    | Description      | Default    | Required | Value type             | Allow value |
 | ----------------------- | ---------------- | ---------- | -------- | ---------------------- | ----------- |
