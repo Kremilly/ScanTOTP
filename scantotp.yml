@@ -1,2 +1,6 @@
 general:
   webcam: 0 # Integer (unsigned)
+  auto_copy_code: true # Boolean (true/false)
+
+advanced:
+  hide_otp_code: false # Boolean (true/false)

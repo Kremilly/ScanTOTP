@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import cv2, requests
+import os, cv2, requests, pyperclip, base64
 
 import numpy as np
 from PIL import Image
@@ -75,17 +75,20 @@ class QRCodeDetect:
                 return qrcode_data
     
     @classmethod
-    def detect(cls, flags):
+    def detect(cls, flags, show=False):
         mode = flags.mode.lower()
         
         match mode:
             case 'file':
-                return cls.detect_from_file(flags.image)
+                result = cls.detect_from_file(flags.image)
             case 'url':
-                return cls.detect_from_url(flags.image)
-            case 'area':
-                return 'TODO: area mode'
+                result = cls.detect_from_url(flags.image)
             case 'webcam':
-                return cls.detect_from_webcam()
+                result = cls.detect_from_webcam()
             case _:
-                return 'Error mode invalid'
+                result = 'Error mode invalid'
+                
+        if show:
+            return print(result)
+        
+        return result

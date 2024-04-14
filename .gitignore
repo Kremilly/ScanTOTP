@@ -167,3 +167,7 @@ stotp/
 *.gif
 *.jpg
 *.jpeg
+*.webp
+
+# Ignore test file
+[_.Tt]est.py
