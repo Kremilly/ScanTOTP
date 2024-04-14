@@ -8,6 +8,8 @@ from io import BytesIO
 
 from pyzbar.pyzbar import decode as qr_decode
 
+from classes.settings import Settings
+
 class QRCodeDetect:
     
     @classmethod
@@ -38,9 +40,11 @@ class QRCodeDetect:
     @classmethod
     def detect_from_webcam(cls):
         qrcode_data = ''
+        webcam_selected = Settings.get('general.webcam', 'int')
         
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture(webcam_selected)
         detector = cv2.QRCodeDetector()
+        
         print("Press 'Q' to quit Webcam mode")
         
         while True:
