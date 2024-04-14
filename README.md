@@ -13,7 +13,7 @@ git clone https://github.com/kremilly/ScanTOTP.git
 Enter the path
 
 ```shell
-cd Scan
+cd ScanTOTP
 ```
 
 Install all dependencies, using *pip*
