@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os, cv2, requests, pyperclip, base64
+import cv2, requests
 
 import numpy as np
 from PIL import Image
