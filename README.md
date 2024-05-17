@@ -1,6 +1,6 @@
 # ScanTOTP
 
-A one-time password (OTP), also known as a one-time PIN, one-time authorization code (OTAC) or dynamic password, is a password that is valid for only one login session or transaction, on a computer system or other digital device. OTPs avoid several shortcomings that are associated with traditional (static) password-based authentication; a number of implementations also incorporate two-factor authentication by ensuring that the one-time password requires access to something a person has (such as a small keyring fob device with the OTP calculator built into it, or a smartcard or specific cellphone) as well as something a person knows (such as a PIN).
+A one-time password (OTP) is a dynamic password valid for only one login session or transaction, enhancing security over traditional passwords. Many implementations include two-factor authentication, requiring both something a person has (like a keyring fob, smartcard, or cellphone) and something a person knows (such as a PIN).
 
 > [!warning]
 > This project is not compatible with FIDO hardware devices.
