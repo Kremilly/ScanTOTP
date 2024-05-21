@@ -5,6 +5,9 @@ A one-time password (OTP) is a dynamic password valid for only one login session
 > [!warning]
 > This project is not compatible with FIDO hardware devices.
 
+> [!important]
+> This repository is currently paused and will only receive security updates and bug fixes.
+
 ## Installation
 
 Clone this repository
